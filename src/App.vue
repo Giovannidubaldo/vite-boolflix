@@ -17,17 +17,20 @@ export default {
   },
   methods: {
     getFIlmCard() {
-      let endpoint = store.endpoint
+      let endpoint_film = store.endpoint
       if (store.query !== '') {
-        endpoint += `?api_key=${store.api_key}`
+        endpoint_film += `?api_key=${store.api_key}`
 
         if (store.query !== '') {
-          endpoint += `&query=${store.query}`
+          endpoint_film += `&query=${store.query}`
         }
       }
-      axios.get(store.endpoint).then((response) => {
+      axios.get(endpoint_film).then((response) => {
         this.store.film_list = response.data.results
       })
+    },
+    getSelectFilm() {
+      this.getFIlmCard()
     }
   },
   created() {
@@ -38,7 +41,7 @@ export default {
 
 <template lang="">
   <div>
-    <AppHeader @film_search="getFIlmCard"/>
+    <AppHeader @film_search="getSelectFilm"/>
     <FilmCard />
   </div>
 </template>

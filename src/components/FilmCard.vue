@@ -15,7 +15,12 @@ export default {
         <div class="row">
             <div class="col-12 col-md-6 col-lg-3" v-for="(film,index) in store.film_list" :key="index">
                 <ul>
-                    <li>{{film.original_title}}</li>
+                    <li>
+                        <h3>{{film.title}}</h3>
+                        <h4>{{film.original_title}}</h4>
+                        <div>{{film.original_language}}</div>
+                        <div>{{film.vote_average}}</div>
+                    </li>
                 </ul>
             </div>
         </div>
