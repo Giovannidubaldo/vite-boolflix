@@ -19,7 +19,7 @@ export default {
     getFIlmCard() {
       let endpoint_film = store.endpoint
       if (store.query !== '') {
-        endpoint_film += `?api_key=${store.api_key}`
+        endpoint_film += `&api_key=${store.api_key}`
 
         if (store.query !== '') {
           endpoint_film += `&query=${store.query}`
