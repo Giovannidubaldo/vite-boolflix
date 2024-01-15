@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     getFIlmCard() {
-      let endpoint_film = store.endpoint
+      let endpoint_film = store.endpoint_movie
       if (store.query !== '') {
         endpoint_film += `&api_key=${store.api_key}`
 
@@ -33,9 +33,6 @@ export default {
       this.getFIlmCard()
     }
   },
-  created() {
-
-  }
 }
 </script>
 
