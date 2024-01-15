@@ -56,7 +56,7 @@ export default {
   <div>
     <AppHeader @card_search="getSelectCard"/>
     <FilmCard />
-    <SeriesCard />
+    <SeriesCard class="mt-5" />
   </div>
 </template>
 
