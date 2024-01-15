@@ -18,7 +18,7 @@ export default {
                     <h1 class="text-uppercase">Boolflix</h1>
                     <div class="d-flex align-items-center">
                         <input type="text" placeholder="Cerca il tuo film preferito" class="form-control my-3" v-model="store.query" @keyup.enter="$emit('card_search')">
-                        <button>Cerca</button>
+                        <button @click="$emit('card_search')">Cerca</button>
                     </div>
                 </div>
             </div>
