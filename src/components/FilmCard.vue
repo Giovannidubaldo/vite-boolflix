@@ -15,21 +15,40 @@ export default {
         <div class="row">
             <h2 v-if="store.film_list.length > 0" class="my-4">Film</h2>
             <div class="col-12 col-md-6 col-lg-3" v-for="(film,index) in store.film_list" :key="index">
-                <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" alt="">
-                <h3>{{film.title}}</h3>
-                <h4>{{film.original_title}}</h4>
-                <div v-if="film.original_language == 'en'"><img src="../assets/en.png" alt="" class="img-flag"></div>
-                <div v-if="film.original_language == 'it'"><img src="../assets/it.png" alt="" class="img-flag"></div>
-                <div v-if="film.original_language == 'fr'"><img src="../assets/fr.png" alt="" class="img-flag"></div>
-                <div v-if="film.original_language == 'ja'"><img src="../assets/ja.png" alt="" class="img-flag"></div>
-                <div>{{film.vote_average}}</div>
+                <div class="card-container">
+                    <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" alt="" class="cover">
+                    <div class="info-card">
+                        <h4>{{film.title}}</h4>
+                        <h6>{{film.original_title}}</h6>
+                        <div v-if="film.original_language == 'en'"><img src="../assets/en.png" alt="" class="img-flag"></div>
+                        <div v-if="film.original_language == 'it'"><img src="../assets/it.png" alt="" class="img-flag"></div>
+                        <div v-if="film.original_language == 'fr'"><img src="../assets/fr.png" alt="" class="img-flag"></div>
+                        <div v-if="film.original_language == 'ja'"><img src="../assets/ja.png" alt="" class="img-flag"></div>
+                        <div>{{film.vote_average}}</div>
+                        <h5 class="mt-3">Trama</h5>
+                        <h6>{{film.overview}}</h6>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.img-flag {
-    width: 30px;
+@use '../styles/partials/variables' as *;
+
+.card-container {
+    &:hover .cover {
+        display: none;
+    }
+
+    &:hover .info-card {
+        display: block;
+    }
+
+    .img-flag {
+        width: 30px;
+    }
+
 }
 </style>
