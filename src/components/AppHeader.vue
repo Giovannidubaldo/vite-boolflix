@@ -14,7 +14,7 @@ export default {
     <header>
         <div class="container">
             <div class="row">
-                <input type="text" placeholder="Cerca il tuo film preferito" class="form-control my-3" v-model="store.query" @keyup.enter="$emit('film_search')">
+                <input type="text" placeholder="Cerca il tuo film preferito" class="form-control my-3" v-model="store.query" @keyup.enter="$emit('card_search')">
             </div>
         </div>
     </header>

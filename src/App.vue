@@ -31,8 +31,22 @@ export default {
         this.store.film_list = response.data.results
       })
     },
-    getSelectFilm() {
-      this.getFIlmCard()
+    getSeriesCard() {
+      let endpoint_series = store.endpoint_series
+      if (store.query !== '') {
+        endpoint_series += `&api_key=${store.api_key}`
+
+        if (store.query !== '') {
+          endpoint_series += `&query=${store.query}`
+        }
+      }
+      axios.get(endpoint_series).then((response) => {
+        this.store.series_list = response.data.results
+      })
+    },
+    getSelectCard() {
+      this.getFIlmCard(),
+        this.getSeriesCard()
     }
   },
 }
@@ -40,7 +54,7 @@ export default {
 
 <template lang="">
   <div>
-    <AppHeader @film_search="getSelectFilm"/>
+    <AppHeader @card_search="getSelectCard"/>
     <FilmCard />
     <SeriesCard />
   </div>
