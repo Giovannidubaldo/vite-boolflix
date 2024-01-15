@@ -1,6 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import FilmCard from './components/FilmCard.vue';
+import SeriesCard from './components/SeriesCard.vue';
 
 import axios from 'axios';
 import { store } from './store.js';
@@ -8,7 +9,8 @@ import { store } from './store.js';
 export default {
   components: {
     AppHeader,
-    FilmCard
+    FilmCard,
+    SeriesCard
   },
   data() {
     return {
@@ -40,6 +42,7 @@ export default {
   <div>
     <AppHeader @film_search="getSelectFilm"/>
     <FilmCard />
+    <SeriesCard />
   </div>
 </template>
 
