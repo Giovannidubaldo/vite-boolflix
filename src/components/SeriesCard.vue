@@ -7,6 +7,11 @@ export default {
         return {
             store,
         }
+    },
+    methods: {
+        getStar(vote) {
+            return Math.ceil(vote)
+        }
     }
 }
 </script>
@@ -25,7 +30,10 @@ export default {
                         <div v-if="series.original_language == 'it'"><img src="../assets/it.png" alt="" class="img-flag"></div>
                         <div v-if="series.original_language == 'fr'"><img src="../assets/fr.png" alt="" class="img-flag"></div>
                         <div v-if="series.original_language == 'ja'"><img src="../assets/ja.png" alt="" class="img-flag"></div>
-                        <div>{{series.vote_average}}</div>
+                        <div class="mt-2">
+                            <i v-for="i in getStar(series.vote_average / 2)" class="fas fa-star"></i>
+                            <i v-for="i in 5 - getStar(series.vote_average / 2)" class="far fa-star"></i>
+                        </div>
                         <h5 class="mt-3">Trama</h5>
                         <h6>{{series.overview}}</h6>
                     </div>
