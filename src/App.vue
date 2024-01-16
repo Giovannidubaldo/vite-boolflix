@@ -55,8 +55,13 @@ export default {
 <template lang="">
   <div>
     <AppHeader @card_search="getSelectCard"/>
-    <FilmCard />
-    <SeriesCard class="mt-5" />
+    <div v-if="store.query == ''" class="container">
+      <h2 class="mt-4">Fai la tua ricerca</h2>
+    </div>
+    <div v-else>
+      <FilmCard />
+      <SeriesCard class="mt-5" />
+    </div>
   </div>
 </template>
 

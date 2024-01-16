@@ -12,7 +12,7 @@ export default {
 
 <template lang="">
     <header>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="text-uppercase">Boolflix</h1>
