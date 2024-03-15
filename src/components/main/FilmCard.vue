@@ -8,6 +8,7 @@ export default {
         }
     },
     methods: {
+        // Funzione che resituisce il voto arrotondato
         getStar(vote) {
             return Math.ceil(vote)
         }
@@ -18,10 +19,15 @@ export default {
 <template lang="">
     <div class="container">
         <div class="row">
-            <h2 v-if="store.film_list.length > 0" class="my-4">Film</h2>
+
+            <!-- Ricerca dei film trovati -->
+            <h2 v-if="store.film_list.length > 0" class="my-4 text-white">Film</h2>
+            <h2 v-else class="my-4 text-white">Nessun film trovato...</h2>
             <div class="col-12 col-md-6 col-lg-3" v-for="(film,index) in store.film_list" :key="index">
                 <div class="card-container">
                     <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" alt="" class="cover">
+
+                    <!-- Retro della card con le info dei film -->
                     <div class="info-card">
                         <h4>{{film.title}}</h4>
                         <h6>{{film.original_title}}</h6>
@@ -58,4 +64,4 @@ export default {
     }
 
 }
-</style>../../store
+</style>

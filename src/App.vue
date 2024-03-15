@@ -1,6 +1,5 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
 import AppHome from './components/AppHome.vue';
 
 import axios from 'axios';
@@ -10,7 +9,6 @@ export default {
   components: {
     AppHeader,
     AppHome,
-    AppMain
   },
   data() {
     return {
@@ -18,6 +16,7 @@ export default {
     }
   },
   methods: {
+    // Funzione che resituisce l'array di film
     getFIlmCard() {
       let endpoint_film = store.endpoint_movie
       if (store.query !== '') {
@@ -31,6 +30,8 @@ export default {
         this.store.film_list = response.data.results
       })
     },
+
+    // Funzione che resituisce l'array di serie
     getSeriesCard() {
       let endpoint_series = store.endpoint_series
       if (store.query !== '') {
@@ -55,11 +56,10 @@ export default {
 <template lang="">
   <div>
     <AppHeader @card_search="getSelectCard"/>
-    <div v-if="store.query == ''">
-      <AppHome />
+    <div v-if="store.profile == false">
     </div>
     <div v-else>
-      <AppMain />
+      <AppHome />
     </div>
   </div>
 </template>

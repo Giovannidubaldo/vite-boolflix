@@ -19,10 +19,14 @@ export default {
 <template lang="">
     <div class="container">
         <div class="row">
-            <h2 v-if="store.series_list.length > 0" class="my-4">Serie Tv</h2>
+
+            <!-- Ricerca delle serie trovate -->
+            <h2 v-if="store.series_list.length > 0" class="my-4 text-white">Serie Tv</h2>
             <div class="col-12 col-md-6 col-lg-3" v-for="(series,index) in store.series_list" :key="index">
                 <div class="card-container">
                     <img :src="`https://image.tmdb.org/t/p/w342${series.poster_path}`" alt="" class="cover">
+
+                    <!-- Retro della card con le info delle serie -->
                     <div class="info-card">
                         <h4>{{series.name}}</h4>
                         <h6>{{series.original_name}}</h6>
