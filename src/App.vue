@@ -1,7 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import FilmCard from './components/FilmCard.vue';
-import SeriesCard from './components/SeriesCard.vue';
+import AppMain from './components/AppMain.vue';
+import AppHome from './components/AppHome.vue';
 
 import axios from 'axios';
 import { store } from './store.js';
@@ -9,8 +9,8 @@ import { store } from './store.js';
 export default {
   components: {
     AppHeader,
-    FilmCard,
-    SeriesCard
+    AppHome,
+    AppMain
   },
   data() {
     return {
@@ -46,7 +46,7 @@ export default {
     },
     getSelectCard() {
       this.getFIlmCard(),
-        this.getSeriesCard()
+      this.getSeriesCard()
     }
   },
 }
@@ -55,12 +55,11 @@ export default {
 <template lang="">
   <div>
     <AppHeader @card_search="getSelectCard"/>
-    <div v-if="store.query == ''" class="container">
-      <h2 class="mt-4">Fai la tua ricerca</h2>
+    <div v-if="store.query == ''">
+      <AppHome />
     </div>
     <div v-else>
-      <FilmCard />
-      <SeriesCard class="mt-5" />
+      <AppMain />
     </div>
   </div>
 </template>

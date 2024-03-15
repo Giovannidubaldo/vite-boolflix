@@ -1,5 +1,5 @@
 <script>
-import { store } from '../store';
+import { store } from '../../store.js';
 export default {
     name: 'FilmCard',
     data() {
@@ -43,7 +43,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/partials/variables' as *;
 
 .card-container {
     &:hover .cover {
@@ -59,4 +58,4 @@ export default {
     }
 
 }
-</style>
+</style>../../store

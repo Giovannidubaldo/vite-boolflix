@@ -1,5 +1,5 @@
 <script>
-import { store } from '../store';
+import { store } from '../../store.js';
 
 export default {
     name: 'SeriesCard',
@@ -44,7 +44,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/partials/variables' as *;
 
 .card-container {
     &:hover .cover {
