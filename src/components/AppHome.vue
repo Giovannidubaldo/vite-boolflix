@@ -22,15 +22,29 @@ export default {
     <!-- Jumbotron della homepage -->
     <div class="jumbo">
         <div class="content">
+
+            <!-- Logo Netflix-Lupin -->
             <div class="d-flex align-items-center mb-4">
-                <div class="logo">
-                    <img src="../assets/netflix.png" alt="" class="img-fluid">
+                <div>
+                    <img src="../assets/lupin.png" alt="" class="img-fluid">
                 </div>
-                <span class="text-uppercase text-span fs-3 ms-3">serie</span>
             </div>
+
+            <!-- Top in italia -->
+            <div class="d-flex align-items-center mb-3">
+                <div class="top-ten text-center">
+                    <span class="text-white text-uppercase fw-bold">top</span> <br>
+                    <p class="text-white text-uppercase fw-bold">10</p>
+                </div>
+                <h2 class="text-white ms-3">Oggi al n° 1 in Italia</h2>
+            </div>
+
+            <!-- Descrizione -->
             <span class="text-white fs-3">
                 Fascinoso maestro della truffa e dei travestimenti. Non può recuperare il passato, ma può ottenere una verità preziosa.
             </span>
+
+            <!-- Bottoni riproduci e info -->
             <div class="d-flex mt-4">
                 <button><i class="fa-solid fa-play me-3"></i>Riproduci</button>
                 <button class="ms-3"><i class="fa-solid fa-circle-info me-3"></i>Altre info</button>
@@ -55,16 +69,18 @@ export default {
     .jumbo{
         background-image: url('../assets/Lupin.jpg');
         background-size: cover;
-        height: 600px;
+        height: 700px;
 
         .content{
             width: 30%;
             position: relative;
             top: 15%;
-            left: 5%;
+            left: 11%;
 
-            .logo{
+            .top-ten{
                 width: 50px;
+                height: 50px;
+                border: 2px solid white
             }
 
             button{

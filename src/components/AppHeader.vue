@@ -18,11 +18,13 @@ export default {
 
                     <!-- Titolo -->
                     <div class="col-2">
-                        <h1 class="text-uppercase">Boolflix</h1>
+                        <div class="logo">
+                            <img src="../assets/netflix.png" alt="" class="img-fluid">
+                        </div>
                     </div>
 
                     <div class="col-5">
-                        <ul class="list-unstyled d-flex">
+                        <ul class="list-unstyled d-flex mt-3">
                             <li>Home</li>
                             <li>Serie Tv</li>
                             <li>Film</li>
@@ -49,8 +51,8 @@ header {
     background-color: #000000;
     padding: 10px;
 
-    h1 {
-        color: #ff180a;
+    .logo{
+        width: 200px;
     }
 
     ul{
@@ -67,7 +69,7 @@ header {
     button {
         color: white;
         background-color: #ff180a;
-        padding: 10px;
+        padding: 8px;
         border-style: none;
         border-radius: 10px;
 
