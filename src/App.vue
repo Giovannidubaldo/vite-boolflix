@@ -1,4 +1,5 @@
 <script>
+import AppProfile from './components/AppProfile.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppHome from './components/AppHome.vue';
 
@@ -7,6 +8,7 @@ import { store } from './store.js';
 
 export default {
   components: {
+    AppProfile,
     AppHeader,
     AppHome,
   },
@@ -16,6 +18,7 @@ export default {
     }
   },
   methods: {
+
     // Funzione che resituisce l'array di film
     getFIlmCard() {
       let endpoint_film = store.endpoint_movie
@@ -55,10 +58,11 @@ export default {
 
 <template lang="">
   <div>
-    <AppHeader @card_search="getSelectCard"/>
-    <div v-if="store.profile == false">
+    <div v-if="store.profile">
+      <AppProfile />
     </div>
     <div v-else>
+      <AppHeader @card_search="getSelectCard"/>
       <AppHome />
     </div>
   </div>
